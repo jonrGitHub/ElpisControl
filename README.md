@@ -9,7 +9,11 @@ Why a windows remote control program to control another windows program?  This w
 
 This program creates a small window that displays the current song information and provides the standard Pandora Controls:  Play, Pause, Next, Like and Dislike.  It also has links to bring up additional information about the currently playing selection through the Pandora website.
 
+![main](https://cloud.githubusercontent.com/assets/12969633/8333292/4d576ad0-1a60-11e5-89ed-7cff66a42061.PNG)
+
 Two window views are provided - the main one for choosing the media computer to connect to and showing album art.  A 'compact' view taking only a single line of screen space with more limited functions:
+ 
+ ![compact](https://cloud.githubusercontent.com/assets/12969633/8319943/a763c3b2-19e2-11e5-9583-1c3e10c3169f.PNG)
  
 (It can also provide this compact control to control Elpis running on the local computer by entering ‘localhost’ or the local computer’s name).   The compact view can be dragged to a new position on the screen as desired.  Just click on the compact view to see details of the selection, artist, or album.
 
@@ -23,4 +27,4 @@ ElpisControl.exe is a standalone executable – just place it where you would li
 
 PlayPause.exe can be run on the computer where Elpis is installed to automate starting Elpis when a user logs in (ideally, via automatic login – either via being the default user with no password required or via an automation tool like Autologon from sysinternals.com).  
 
-PlayPause.exe will offer to copy itself to the Elpis directory, and will create a ‘run’ registry entry to run itself automatically on logon – essentially ‘installing’ itself if run automatically.  You can use MSCONFIG to disable this run entry if you no longer want Elpis to start on every logon.
+PlayPause.exe will offer to copy itself to the Elpis directory, and will create a ‘run’ registry entry to run itself automatically on logon – essentially ‘installing’ itself to run automatically.  You can use MSCONFIG to disable this run entry if you no longer want Elpis to start on every logon.
