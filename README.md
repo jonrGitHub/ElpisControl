@@ -14,9 +14,12 @@ Two window views are provided - the main one for choosing the media computer to 
  ![compact](https://cloud.githubusercontent.com/assets/12969633/8319943/a763c3b2-19e2-11e5-9583-1c3e10c3169f.PNG)
 
 A second program, PlayPause is provided to automate starting Elpis on the Media Center in a Paused state, ready to receive a play command from Elpis Control.  
+
 Both programs are ‘developed' in AutoHotkey, which should allow easy modification to address any customizations desired.  
 
 Setup
 ElpisControl.exe is a standalone executable – just place it where you would like to keep it and execute it in place.  Optionally you can right-click and Sendto your desktop to create a desktop icon or drag the program to the Start Menu to create a start menu icon.
+
 PlayPause.exe can be run on the computer where Elpis is installed to automate starting Elpis when a user logs in (ideally, via automatic login – either via being the default user with no password required or via an automation tool like Autologon from sysinternals.com).  
+
 PlayPause.exe will offer to copy itself to the Elpis directory, and will create a ‘run’ registry entry to run itself automatically on logon – essentially ‘installing’ itself if run automatically.  You can use MSCONFIG to disable this run entry if you no longer want Elpis to start on every logon.
