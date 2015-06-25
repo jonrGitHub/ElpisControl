@@ -46,6 +46,8 @@ Prerequisites.
     o Under Login - Automatically Logon should be selected (the default).
     o Under Pandora - Configure Elpis to Automatically Play Last Station.
     o Under Global Hotkeys – ‘Play / Pause’ should be associated with ‘MediaPlayPause’ (the default)
+	o Note that unchecking Gk and leaving En checked may be preferred if you find that your media 
+	   center remote is turning on Eplis when another program (like the TV) is desired.
 
 To stop Elpis from autostarting, disable the link via the MSCONFIG command.
 
