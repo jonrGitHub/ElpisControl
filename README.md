@@ -1,8 +1,6 @@
 # ElpisControl
 Windows based remote control for the Elpis Windows Desktop Pandora Radio Client 
 
-Elpis Control
-
 This is a Windows based remote control for the very nice Elpis Windows Desktop Pandora Radio Client that plays music from Pandora.  (See https://github.com/adammhaile/Elpis).  
 
 Why a windows remote control program to control another windows program?  This was designed for the situation where Elpis is running on a Media Center Computer (with the nice sound system) yet you want to control Elpis from another laptop or desktop that you are working on.  This program only controls   Elpis, it does not play Pandora music itself.
@@ -21,6 +19,7 @@ A second program, PlayPause is provided to automate starting Elpis on the Media 
 
 Both programs are ‘developed' in AutoHotkey, which should allow easy modification to address any customizations desired.  
 
+
 Setup
 
 ElpisControl.exe is a standalone executable – just place it where you would like to keep it and execute it in place.  Optionally you can right-click and Sendto your desktop to create a desktop icon or drag the program to the Start Menu to create a start menu icon.
@@ -28,3 +27,11 @@ ElpisControl.exe is a standalone executable – just place it where you would li
 PlayPause.exe can be run on the computer where Elpis is installed to automate starting Elpis when a user logs in (ideally, via automatic login – either via being the default user with no password required or via an automation tool like Autologon from sysinternals.com).  
 
 PlayPause.exe will offer to copy itself to the Elpis directory, and will create a ‘run’ registry entry to run itself automatically on logon – essentially ‘installing’ itself to run automatically.  You can use MSCONFIG to disable this run entry if you no longer want Elpis to start on every logon.
+
+Prerequisites.
+- Elpis must be installed and configured on the computer.  At least one Pandora station must be configured.
+- Open the settings screen by selecting the ‘wrench and screwdriver’ icon. the following must be configured:
+    - Under Login - Automatically Logon should be selected (the default).
+    - Under Pandora - Configure Elpis to Automatically Play Last Station.
+    - Under Global Hotkeys – ‘Play / Pause’ should be associated with ‘MediaPlayPause’ (the default
+      - Note that unchecking Gk and leaving En checked may be preferred if you find that your media center remote is turning on Eplis when another program (like the TV) is desired.
