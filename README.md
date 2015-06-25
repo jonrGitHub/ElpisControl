@@ -19,6 +19,7 @@ A second program, PlayPause is provided to automate starting Elpis on the Media 
 
 Both programs are ‘developed' in AutoHotkey, which should allow easy modification to address any customizations desired.  
 
+AutoHotkey is a very small, fast, and incredibly capable scripting language.  While it is interpretive, it can be encapsulated in an .EXE file as is included in this repository.  To work with the source code, use the active AutoHotkey program from http://ahkscript.org/download/.  Source at https://github.com/Lexikos/AutoHotkey_L/blob/master/README.md.  Avoid AutoHotkey.com as it is now defunct.
 
 Setup
 
