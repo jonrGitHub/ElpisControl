@@ -1,0 +1,14 @@
+PlayPause is a program designed to start the wonderful Elpis Pandora client and place it in a paused state.  (see https://github.com/adammhaile/Elpis for more information about the Windows Desktop Pandora Radio Client).
+
+It addresses the situation where the Elpis Pandora client is running on a windows media center to play music but remote control of the music is desired from another computer (see Elpis Control) or via an Android phone (see Elpis Remote - https://github.com/seliver/ElpisRemote).
+
+This program will install PlayPause to run on user logon.  PlayPause will then start Elpis upon windows logon and then pause Elpis, waiting for a play command from a remote.
+
+Prerequisites.
+- Elpis must be installed and configured on the computer.  At least one Pandora station must be configured.
+- Open the settings screen by selecting the ‘wrench and screwdriver’ icon. the following must be configured:
+o Under Login - Make sure Automatically Logon is selected as well (the default)
+o Under Pandora - Configure Elpis to Automatically Play Last Station.
+To stop Elpis from autostarting, disable the link via the MSCONFIG command.
+
+This program does Not install Elpis, nor does it log a user into windows automatically.  For the latter, autologon.exe from Sysinternals (a Microsoft company) is recommended: http://live.sysinternals.com/autoruns.exe

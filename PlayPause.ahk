@@ -45,9 +45,6 @@ Prerequisites.
 - Open the settings screen by selecting the ‘wrench and screwdriver’ icon. the following must be configured:
     o Under Login - Automatically Logon should be selected (the default).
     o Under Pandora - Configure Elpis to Automatically Play Last Station.
-    o Under Global Hotkeys – ‘Play / Pause’ should be associated with ‘MediaPlayPause’ (the default)
-	o Note that unchecking Gk and leaving En checked may be preferred if you find that your media 
-	   center remote is turning on Eplis when another program (like the TV) is desired.
 
 To stop Elpis from autostarting, disable the link via the MSCONFIG command.
 
@@ -115,21 +112,51 @@ SoundSet, 1, ,MUTE
 ;run, %A_ScriptDir%\Elpis.exe
 run, C:\Program Files (x86)\Elpis\Elpis.exe
 
-; If Elpis starting and running an existing station isn't detected, timeout this process and return the Mute state to where it was.
-SetTimer, Endit, 50000
+; If Elpis starting and running an existing station isn't detected, timeout this process and return the Mute state to where it was.  
+; Feel free to add more milliseconds if you find that you have a media center even slower than mine.
+SetTimer, Endit, 180000
 
 ; Wait for Elpis to start and begin a station 
 winwait, Elpis |
+WinHide
+;WinMinimize
 Endit:
 
 ; Pause Elpis using the global Play/Pause hotkey
-Sendevent, {MEDIA_PLAY_PAUSE} 
+;Sendevent, {MEDIA_PLAY_PAUSE} 
+
+; Instead of using the Media Keys, use the HTML interface to send a Pause command - much more reliable.
+url = http://Localhost:35747/pause
+Loop {
+	sleep, 500
+	Result := HTMLText(url)
+} until (Result="Paused.")
+
 
 ; Return Mute Settings to where it was
-sleep, 3000  ; Seems to need a slight pause before turning on the speakers
+sleep, 1000  ; Seems to need a slight pause before turning on the speakers
 SoundSet, % Mute_State="ON" ? 1 : 0, ,MUTE
 
 ExitApp
+
+; Function that communications with the remote Elpis program via the HTML COM object - largely stolen from the internet, original source lost - 
+; modified to make it asynchronous (prevents program from locking up when elpis isn't started a bad server or URL is provided), and error 
+; checking added.
+; Note that the AutoHotKey help has a very similar version
+HTMLText(url){
+	doc := ComObjCreate("HTMLfile")
+	pwhr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+	try pwhr.Open("GET",url, true) 
+	catch e
+		return, % "E: Cannot Connect"
+	try pwhr.Send()
+	try pwhr.WaitForResponse()
+	catch e
+		return, % "E: No Response" 
+	doc.write(pwhr.ResponseText)
+	text := doc.body.outerText
+	return, text	
+}
 
 
 ; A little work in progress in case we ever want to search the disk for the Elpis program
