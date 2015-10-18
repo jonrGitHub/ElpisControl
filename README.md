@@ -34,5 +34,3 @@ Prerequisites.
 - Open the settings screen by selecting the ‘wrench and screwdriver’ icon. the following must be configured:
     - Under Login - Automatically Logon should be selected (the default).
     - Under Pandora - Configure Elpis to Automatically Play Last Station.
-    - Under Global Hotkeys – ‘Play / Pause’ should be associated with ‘MediaPlayPause’ (the default
-      - Note that unchecking Gk and leaving En checked may be preferred if you find that your media center remote is turning on Eplis when another program (like the TV) is desired.
